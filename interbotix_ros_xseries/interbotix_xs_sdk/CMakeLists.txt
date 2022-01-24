@@ -66,14 +66,13 @@ include_directories(
 ## Declare a C++ library
 add_library(${PROJECT_NAME}
   src/xs_sdk_obj.cpp
-  src/xs_sdk_obj_new.cpp
 )
 add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
 ## Specify libraries to link a library or executable target against
 ## Add cmake target dependencies of the executable
-add_executable(xs_sdk src/xs_sdk.cpp src/xs_sdk_obj.cpp)
+add_executable(xs_sdk src/xs_sdk.cpp src/xs_sdk_obj.cpp src/xs_sdk_new.cpp)
 add_dependencies(xs_sdk ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(xs_sdk ${PROJECT_NAME} ${catkin_LIBRARIES} ${YAML_CPP_LIBRARIES})
 
